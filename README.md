@@ -6,5 +6,5 @@ For modeling, the Logistic Regression algorithm is used, which is one of the lig
 
 The results of this study show that the TF-IDF method is superior to BoW in sentiment analysis of app reviews. In the future, this research can be developed by trying other classification models such as SVM or Neural Networks, as well as improving the quality of preprocessing to produce a more accurate model.
 
-[Slag dict](https://www.kaggle.com/datasets/fornigulo/kamus-slag)\
+Slag dict: https://www.kaggle.com/datasets/fornigulo/kamus-slag
 [InSet (Indonesia Sentiment Lexicon)](https://github.com/fajri91/InSet)
