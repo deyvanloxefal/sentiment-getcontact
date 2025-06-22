@@ -1,11 +1,50 @@
-## Sentiment Analysis of GetContact Reviews: Understanding User Perception with NLP
-Sentiment analysis of app reviews is an important aspect in understanding user perception of a product. In this research, sentiment analysis of app reviews obtained through scraping using the `google_play_scraper` library is performed. The initial dataset contains 50,000 rows of data which then undergoes a series of preprocessing stages, including duplicate removal, text cleaning (removing emoticons, numbers, and symbols), case folding, normalization using a slag dictionary, tokenization, stopword removal, and stemming using Sastrawi. In addition, data visualization is done using WordCloud before and after preprocessing to see the distribution of words in user reviews.
+# **Sentiment Analysis of GetContact App Reviews Using NLP**
 
-The labeling process is done automatically using InSet (Indonesia Sentiment Lexicon), which allows each review to be classified as positive or negative based on the sentiment score of the words contained in it. After that, feature extraction is performed using two popular techniques, namely Bag of Words (BoW) and Term Frequency-Inverse Document Frequency (TF-IDF).
+## **About the Project**
+This project performs a sentiment analysis on user reviews of the GetContact application from the Google Play Store. By leveraging Natural Language Processing (NLP) techniques, this project aims to automatically understand user perception and sentiment (positive or negative) to gain valuable insights for product development.
 
-For modeling, the Logistic Regression algorithm is used, which is one of the lightweight and effective classification models for text analysis. The evaluation results showed that the model with BoW achieved an accuracy of 85.48%, while the model with TF-IDF had a slightly higher accuracy of 85.93%. Further analysis using confusion matrix shows that the model with TF-IDF is able to reduce the number of False Positives, thus providing better classification results compared to BoW.
+## **Objectives**
+* To collect review data for the GetContact application from the Google Play Store.
+* To clean and prepare the text data through a series of preprocessing stages.
+* To automatically label the sentiment (positive/negative) of each review using a lexicon.
+* To build and train a classification model to predict review sentiment.
+* To compare the performance of two popular feature extraction methods: **Bag of Words (BoW)** and **TF-IDF**.
 
-The results of this study show that the TF-IDF method is superior to BoW in sentiment analysis of app reviews. In the future, this research can be developed by trying other classification models such as SVM or Neural Networks, as well as improving the quality of preprocessing to produce a more accurate model.
+## **Dataset**
+The dataset consists of **50,000 user reviews** of the GetContact application, collected from the Google Play Store through a scraping process. The sentiment labels for the training data were automatically generated using the **InSet (Indonesia Sentiment Lexicon)**.
 
-Slag dict: https://www.kaggle.com/datasets/fornigulo/kamus-slag \
-InSet (Indonesia Sentiment Lexicon): https://github.com/fajri91/InSet
+## **Tools & Libraries**
+* **google_play_scraper:** For scraping review data.
+* **Pandas:** For data manipulation and analysis.
+* **Sastrawi:** For the Indonesian language stemming process.
+* **Scikit-learn:** For feature extraction (BoW & TF-IDF), modeling (Logistic Regression), and evaluation.
+* **WordCloud:** For visualizing word distribution.
+* **Matplotlib & Seaborn:** For data visualization.
+
+## **Methodology**
+The analysis was conducted through several main stages:
+1.  **Data Collection:** Scraping 50,000 reviews from the Google Play Store.
+2.  **Data Preprocessing:**
+    - Removing duplicates.
+    - Cleaning text from emojis, numbers, and symbols.
+    - Case Folding (converting text to lowercase).
+    - Normalization (correcting non-standard/slang words).
+    - Tokenization (splitting sentences into words).
+    - Stopword Removal (removing common words).
+    - Stemming (reducing words to their base form).
+3.  **Automatic Labeling:** Determining the sentiment score of each review using **InSet**.
+4.  **Feature Extraction:** Converting text into numerical data using **Bag of Words (BoW)** and **TF-IDF**.
+5.  **Modeling:** Training a **Logistic Regression** classification model.
+6.  **Evaluation:** Measuring model performance using accuracy and a *Confusion Matrix*.
+
+## **Results**
+* The model using **Bag of Words (BoW)** achieved an accuracy of **85.48%**.
+* The model using **TF-IDF** achieved a slightly higher accuracy of **85.93%**.
+* Based on the *Confusion Matrix* analysis, the **TF-IDF** model proved to be better at reducing the number of *False Positives*, making it a more reliable model.
+
+## **Conclusion**
+The **TF-IDF** feature extraction method demonstrated superior performance compared to **Bag of Words (BoW)** for the sentiment analysis of GetContact app reviews. This research successfully proves that the NLP approach is effective for classifying sentiment and can provide deep insights into user perception of an application.
+
+## **Sources**
+* **Slang Word Dictionary:** https://www.kaggle.com/datasets/fornigulo/kamus-slag
+* **InSet (Indonesia Sentiment Lexicon):** https://github.com/fajri91/InSet
